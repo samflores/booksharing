@@ -6,3 +6,9 @@ set :environment, :test
 set :run, false
 set :raise_errors, true
 set :logging, false
+
+Capybara.app = Sinatra::Application
+
+Spec::Runner.configure do |config| 
+  config.include(Capybara, :type => :integration) 
+end
