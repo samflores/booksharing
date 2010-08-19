@@ -1,4 +1,4 @@
 source :gemcutter
 
-gem 'sinatra'
+gem 'sinatra', :require => false
 gem 'rspec'
