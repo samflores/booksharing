@@ -1,0 +1,7 @@
+<% if @books.empty? %>
+no books! <a href='/books/new'>register one now</a>!
+<% else %>
+  <% @books.each do |book| %>
+    <%= book.title %>
+  <% end %>
+<% end %>

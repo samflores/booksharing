@@ -1,0 +1,26 @@
+Author:
+  name:
+    type: string
+    limit: 50
+
+Publisher:
+  name:
+    type: string
+    limit: 50
+
+Book:
+  isbn:
+    type: decimal
+    precision: 13
+    scale: 0
+  title:
+    type: string
+    limit: 50
+  publisher_id:
+    type: integer
+    
+authors_books:
+  author_id:
+    type: integer
+  book_id:
+    type: integer
