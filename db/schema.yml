@@ -19,6 +19,17 @@ Book:
   publisher_id:
     type: integer
     
+Category:
+  name:
+    type: string
+    limit: 50
+
+books_categories:
+  book_id:
+    type: integer
+  category_id:
+    type: integer
+    
 authors_books:
   author_id:
     type: integer

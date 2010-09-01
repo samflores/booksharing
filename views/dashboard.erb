@@ -1,13 +1,20 @@
 <% if @books.empty? %>
 no books! <a href='/books/new'>register one now</a>!
 <% else %>
-  <% @books.each do |book| %>
-    <%= book.title %>
-  <% end %>
+  <ul>
+    <% @books.each do |book| %>
+      <li><%= book.title %></li>
+    <% end %>
+  </ul>
 <% end %>
+<ul>
+  <% Category.all.each do |category| %>
+    <li><a href="/?c=<%= category.name %>"><%= category.name %></a></li>
+  <% end %>
+</ul>
 
 <form action="/" method="get" accept-charset="utf-8">
   <label for="search_q">Search</label>
-  <input type="text" name="search[q]" id="search_q">
+  <input type="text" name="q" id="search_q">
   <input type="submit" value="Go">
 </form>

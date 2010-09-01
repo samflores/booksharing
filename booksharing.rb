@@ -7,10 +7,12 @@ require 'sinatra'
 require './lib/setup'
 require './models/author'
 require './models/publisher'
+require './models/category'
 require './models/book'
 
 get '/' do
-  q = params[:search][:q] rescue nil
+  q = params[:q] rescue nil
   @books = q ? Book.global_search(q) : Book.recent
+  @books = @books.categorized(params[:c]) if params[:c]
   erb :dashboard
 end
