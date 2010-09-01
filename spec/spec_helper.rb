@@ -1,6 +1,7 @@
 ENV['RACK_ENV'] = 'test'
 
 require File.expand_path('../booksharing', File.dirname(__FILE__))
+require File.expand_path('support/blueprints', File.dirname(__FILE__))
 
 set :environment, :test
 set :run, false

@@ -5,3 +5,9 @@ no books! <a href='/books/new'>register one now</a>!
     <%= book.title %>
   <% end %>
 <% end %>
+
+<form action="/" method="get" accept-charset="utf-8">
+  <label for="search_q">Search</label>
+  <input type="text" name="search[q]" id="search_q">
+  <input type="submit" value="Go">
+</form>

@@ -15,7 +15,7 @@ describe Book do
   it 'should not be valid without an isbn' do
     subject.isbn = nil
     subject.should_not be_valid
-    subject.errors.on(:isbn).should include("can't be blank")
+    subject.errors[:isbn].should include("can't be blank")
   end
   
   it 'should not be valid with an already used isbn' do
@@ -31,12 +31,12 @@ describe Book do
   it 'should not be valid without a title' do
     subject.title = nil
     subject.should_not be_valid
-    subject.errors.on(:title).should include("can't be blank")
+    subject.errors[:title].should include("can't be blank")
   end
   
   it 'should not be valid without an author' do
     subject.authors = []
     subject.should_not be_valid
-    subject.errors.on(:authors).should include("can't be empty")
+    subject.errors[:authors].should include("can't be empty")
   end
 end

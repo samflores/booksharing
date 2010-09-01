@@ -5,4 +5,7 @@ class Book < ActiveRecord::Base
   validates_presence_of :isbn, :title
   validates_uniqueness_of :isbn
   validates_length_of :authors, :minimum => 1, :message => "can't be empty"
+  
+  scope :recent, :limit => 10
+  scope :global_search, lambda { |q| where(["isbn = ? or LOWER(title) LIKE ?", q, "%#{q.downcase}%"]) }
 end
